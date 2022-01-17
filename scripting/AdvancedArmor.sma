@@ -34,8 +34,6 @@ AddArmor(const UserId, const iAmount, const iMax = 100) {
     if(iAmount > 0)
         iNewArmor = min(iMax, iNewArmor);
 
-    // log_amx("[DEBUG] AddArmor(%n, %d, %d): old %d | new %d", UserId, iAmount, iMax, GetArmor(UserId), iNewArmor);
-
     SetArmor(UserId, iNewArmor);
 }
 
@@ -52,8 +50,6 @@ public client_putinserver(UserId) {
     
     new iArmor = GetArmor(UserId);
     AddArmor(UserId, -iDamage);
-
-    // log_amx("[DEBUG] %n: d: %d -> %d | a: %d -> %d", UserId, iDamage, floatround(floatmax(fDamage - float(iArmor), 0.0)), iArmor, GetArmor(UserId), floatround(get_entvar(UserId, var_health)));
 
     if(iArmor >= iDamage) {
         SetHookChainReturn(ATYPE_INTEGER, 0);
