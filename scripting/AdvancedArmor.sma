@@ -18,6 +18,7 @@ public plugin_init() {
     RegisterHookChain(RG_CBasePlayer_Killed, "@OnKilled", true);
     RegisterHookChain(RG_CSGameRules_RestartRound, "@OnRoundRestart", false);
 
+    // Закомментировать для отключения худа (И ещё в конце файла закомментирировать инклюд)
     Hud_Init();
 }
 
@@ -74,8 +75,14 @@ public client_putinserver(UserId) {
     }
 }
 
+// Закомментировать для отключения худа
 #include "AdvancedArmor/Hud"
+
+// Закомментировать для отключения нативов
 #include "AdvancedArmor/Natives"
+
+// Закомментировать для отключения поддержки контроллера предметов
 #include "AdvancedArmor/IC-Support"
 
+// Закомментировать для отключения функций тестирования
 // #include "AdvancedArmor/Test"
