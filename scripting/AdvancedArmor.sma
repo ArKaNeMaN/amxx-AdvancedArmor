@@ -7,7 +7,7 @@
 public stock const PluginName[] = "Advanved Armor";
 public stock const PluginVersion[] = "1.0.0";
 public stock const PluginAuthor[] = "ArKaNeMaN";
-public stock const PluginUrl[] = "t.me/arkaneman";
+public stock const PluginURL[] = "t.me/arkaneman";
 
 new gPlayerArmor[MAX_PLAYERS + 1] = {0, ...};
 
