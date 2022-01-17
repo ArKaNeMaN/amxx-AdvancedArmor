@@ -13,7 +13,7 @@ public VipM_IC_OnLoaded() {
     }
 
     register_clcmd("aa_get", "@Test_Cmd_GetArmor");
-    set_task(3.0, "@Test_Task_GiveArmor", .flags = "b");
+    set_task(1.0, "@Test_Task_GiveArmor", .flags = "b");
 }
 
 @Test_Cmd_GetArmor(const UserId) {

@@ -16,6 +16,8 @@ native AdvArmor_SetUserArmor(const UserId, const iAmount);
 /**
  * Добавление/убавление значения брони игрока.
  *
+ * @note    Максимальное значение игнорируется при убавлении значения брони.
+ *
  * @param UserId    Индекс игрока.
  * @param iAmount   Значение брони.
  *

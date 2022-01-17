@@ -16,6 +16,7 @@ public plugin_init() {
     
     RegisterHookChain(RG_CBasePlayer_TakeDamage, "@OnTakeDamage", false);
     RegisterHookChain(RG_CBasePlayer_Killed, "@OnKilled", true);
+    RegisterHookChain(RG_CSGameRules_RestartRound, "@OnRoundRestart", false);
 
     Hud_Init();
 }
@@ -65,6 +66,16 @@ public client_putinserver(UserId) {
 
 @OnKilled(const UserId, InflictorId, AttackerId, Float:fDamage, iDamageType) {
     SetArmor(UserId, 0);
+}
+
+@OnRoundRestart() {
+    if(!get_member_game(m_bCompleteReset)) {
+        return;
+    }
+
+    for(new UserId = 1; UserId <= MAX_PLAYERS; UserId++) {
+        SetArmor(UserId, 0);
+    }
 }
 
 #include "AdvancedArmor/Hud"
